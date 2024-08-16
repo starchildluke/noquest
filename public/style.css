@@ -7,6 +7,13 @@
 	--text-white: #f9fbfb;
 }
 
+@font-face {
+	font-family: 'Dragon Warrior IV';
+	src: url("/fonts/dragon-warrior-iv-nes.woff2") format("woff2");
+	font-weight: normal;
+	font-display: swap;
+}
+
 a, body {
 	color: var(--text-white);
 }
@@ -16,7 +23,8 @@ a:hover {
 }
 
 body {
-	font-family: Lucida Console, Monaco, monospace;
+	font-family: 'Garamond', Times New Roman, serif;
+	font-size: 1.25rem;
 	background: 
 	      linear-gradient(135deg,#0000 20.5%,#47d3ff 0 29.5%,#0000 0) 0 5px,
 	      linear-gradient( 45deg,#0000 8%,#47d3ff 0 17%, #0000 0 58%) 10px 0,
@@ -27,15 +35,28 @@ body {
 	margin: 2rem;
 }
 
-.container {
+h1, h2, h3, h4, h5 {
+	font-family: 'Dragon Warrior IV', Lucida Console, Monaco, monospace;
+}
+
+.container, .container-base {
 	display: flex;
-	flex-direction: column;
 	background: rgba(11,11,11,0.9);
 	height: calc(100vh - 4rem - 4px);
 	align-items: center;
-	justify-content: center;
 	border: 2px solid var(--text-white);
 	border-radius: 2px;
+}
+
+.container {
+	flex-direction: column;
+	justify-content: center;
+}
+
+header {
+	border: 1px solid white;
+	height: calc(100vh - 4rem - 4px);
+	flex-grow: 1;
 }
 
 .logo {
@@ -49,9 +70,12 @@ body {
 	margin-top: 1rem;
 }
 
+.home-text ul {
+	margin-left: 5rem;
+}
+
 .home-text li {
 	list-style: none;
-	margin-left: 1rem;
 }
 
 .home-text p:last-child {

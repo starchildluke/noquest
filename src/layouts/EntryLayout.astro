@@ -14,9 +14,11 @@ const { title, description, canonicalURL = Astro.url } = Astro.props;
 <html lang="en-GB">
   <BaseHead {title} {description} {canonicalURL} />
   <StructuredData {title} />
-  <body>
-    <main class="container">
-      <slot />
-      </main>
-  </body>
+  <div class="container">
+    <body>
+      <main>
+        <slot />
+        </main>
+    </body>
+  </div>
 </html>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+const title = "Blog";
+const description = "This is where I keep my blogs.";
+
+const posts = (await getCollection('albums')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+---
+
+<BaseLayout title={title} description={description}>
+      <h1>{title}</h1>
+      <ul>
+        {posts.map((post) => (
+          <img src={post.src} width="200" height="200" />
+          <p>{post.title}</p>
+          ))
+        }
+      </ul>
+      </BaseLayout>
