@@ -1,16 +1,19 @@
 ---
+import EntryLayout from '../layouts/EntryLayout.astro';
 
+const title = 'NOQUEST';
+const description = "NOQUEST is an album series by Starchildluke, inspired by the Dragon Quest video games series."
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<EntryLayout {title} {description}>
+        	<div class="logo">
+        		<img src="/images/noquest-logo.webp" width="250" height="115">
+        	</div>
+        	<nav class="home-text">
+	        	<ul>
+		        	<li>Start</li>
+		        	<li>About</li>
+		        </ul>
+	        <nav>
+	        	<p>Starchildluke © 2024</p>
+</BaseLayout>

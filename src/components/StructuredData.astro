@@ -1,0 +1,70 @@
+---
+const {
+  title,
+  description,
+  canonicalURL = Astro.url
+} = Astro.props;
+
+let sd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://lukealexdavis.co.uk/#website",
+      "url": "https://lukealexdavis.co.uk/",
+      "name": "Luke Davis",
+      "publisher": {
+        "@id": "https://lukealexdavis.co.uk/#Person"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "WebPage",
+      "headline": title,
+      "description": description,
+      "author": {
+        "@type": "Person",
+        "name": "Luke Davis",
+        "@id": "https://lukealexdavis.co.uk/",
+        "url": "https://lukealexdavis.co.uk/"
+      },
+      "publisher": {
+        "@id": "https://lukealexdavis.co.uk/#Person",
+        "@type": "Person",
+        "name": "Luke Davis"
+      },
+      "name": title,
+      "@id": canonicalURL + "#richSnippet",
+      "inLanguage": "en-GB",
+      "mainEntityOfPage": {
+        "@id": canonicalURL + "#webpage"
+      }
+    },
+    {
+      "@type": "Person",
+      "image": [
+        "https://lukealexdavis.co.uk/images/k5t2wVcf-Luke-Davis-640x600.png",
+        "https://lukealexdavis.co.uk/images/lukedavis_jpg.jpg"
+      ],
+      "url": "https://lukealexdavis.co.uk/",
+      "sameAs": [
+        "https://uk.linkedin.com/in/lukealexdavis",
+        "https://bsky.app/profile/lukealexdavis.co.uk",
+        "https://www.searchenginejournal.com/author/luke-davis/",
+        "https://www.semrush.com/user/147747585/",
+        "https://lukealexdavis.contently.com/"
+      ],
+      "alternateName": [
+        "Luke Davis",
+        "Luke Alex Davis",
+        "starchildluke"
+      ],
+      "name": "Luke Davis",
+      "jobTitle": "Technical SEO",
+      "gender": "Male",
+    }
+  ]
+})
+
+---
+<script type="application/ld+json" set:html={sd}></script>

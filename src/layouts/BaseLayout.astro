@@ -1,0 +1,22 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import StructuredData from '../components/StructuredData.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL: string | URL;
+}
+
+const { title, description, canonicalURL = Astro.url } = Astro.props;
+
+---
+<html lang="en-GB">
+  <BaseHead {title} {description} {canonicalURL} />
+  <StructuredData {title} />
+  <body>
+    <Header />
+      <slot />
+  </body>
+</html>

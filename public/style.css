@@ -1,0 +1,60 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+:root {
+	--text-white: #f9fbfb;
+}
+
+a, body {
+	color: var(--text-white);
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-family: Lucida Console, Monaco, monospace;
+	background: 
+	      linear-gradient(135deg,#0000 20.5%,#47d3ff 0 29.5%,#0000 0) 0 5px,
+	      linear-gradient( 45deg,#0000 8%,#47d3ff 0 17%, #0000 0 58%) 10px 0,
+	      linear-gradient(135deg,#0000 8%,#47d3ff 0 17%, #0000 0 58%,#47d3ff 0 67%,#0000 0),        
+	      linear-gradient( 45deg,#0000 8%,#47d3ff 0 17%, #0000 0 58%,#47d3ff 0 67%,#0000 0 83%,#47d3ff 0 92%,#0000 0),
+	      #474aff;
+	background-size: 20px 20px;
+	margin: 2rem;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	background: rgba(11,11,11,0.9);
+	height: calc(100vh - 4rem - 4px);
+	align-items: center;
+	justify-content: center;
+	border: 2px solid var(--text-white);
+	border-radius: 2px;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 2rem;
+}
+
+.home-text {
+	margin-top: 1rem;
+}
+
+.home-text li {
+	list-style: none;
+	margin-left: 1rem;
+}
+
+.home-text p:last-child {
+	margin-top: 1rem;
+	text-align: center;
+}
